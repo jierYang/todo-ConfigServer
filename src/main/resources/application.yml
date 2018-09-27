@@ -1,6 +1,11 @@
 spring:
+  config:
+    name: ${spring.application.name}
+    location: ../config/application.yml, ../config/gateway-dev.yml, ../config/todoService-dev.yml, ../config/userService-dev.yml, ../config/userService-dev2.yml
+
   cloud:
     config:
+      enabled: false
       server:
         git:
           uri: https://github.com/jierYang/springcloud-config-repository.git
