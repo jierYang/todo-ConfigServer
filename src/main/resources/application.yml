@@ -8,8 +8,8 @@ spring:
       enabled: false
       server:
         git:
-          uri: https://github.com/jierYang/springcloud-config-repository.git
-          search-paths: micro-service
+          uri: https://github.com/jierYang/todo-ConfigServer.git
+          search-paths: config
           timeout: 60
 server:
   port: 8888
