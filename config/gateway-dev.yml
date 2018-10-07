@@ -1,2 +1,29 @@
 server:
   port: 8080
+  context-path: /api
+
+spring:
+
+  application:
+    name: gateway
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    users:
+      path: /users/**
+      url: http://user-service:8082
+      stripPrefix: false
+    todos:
+      path: /todos/**
+      url: http://todo-service:8088
+      stripPrefix: false
+  sensitiveHeaders:
+
+  hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 15000
